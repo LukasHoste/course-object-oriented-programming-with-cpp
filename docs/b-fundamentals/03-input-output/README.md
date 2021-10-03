@@ -265,7 +265,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Wrong Input
+### ✅ Wrong Input
 
 *What happens when the user inputs something different than a number. For example a character `b` or a string `Hello`? Can you explain what happens? How can we detect this?*
 
@@ -276,7 +276,9 @@ int number;
 cin >> number;
 ```
 
-### ❌ Output Hexadecimal Value
+When something different from a number is given the error flag wil be raised. The cin will fail as the type is not correct and give an error. This can be detected by checking if cin >> number is true.
+
+### ✅ Output Hexadecimal Value
 
 *Can you alter the next code snippet so the number is outputted in hexadecimal format, with a leading `0x` and a width of 4 hexadecimal digits? Note that this will require the `iomanip` library to be included (already done for you).*
 
@@ -288,11 +290,13 @@ using namespace std;
 
 int main() {
   int number = 23;
-  cout << "Number in hex format: " << number << endl;
+  cout << "Number in hex format: " << "0x" << setw(4) << setfill('0') << hex  << number << endl;
 
   return 0;
 }
 ```
+
+Using both showbase and setw/setfill does not work.
 
 The expected output is:
 
