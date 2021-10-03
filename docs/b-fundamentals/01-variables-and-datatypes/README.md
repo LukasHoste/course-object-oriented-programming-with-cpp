@@ -478,37 +478,48 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Data vs Information
+### ✅ Data vs Information
 
 *What is the difference between data and information? Give an example.*
 
-### ❌ Initialization is mandatory
+Data are raw and unorganized facts that need to be processed to make usefull.
+Information is data that has been processed as to make it usefull/ have context/relevance/purpose.
+
+### ✅ Initialization is mandatory
 
 *Why do we need to initialize variables? What happens if we don't initialize a variable?*
+A variable needs to be initialized to assign a variable. If a variable is not initialized it causes garbage data and may have unpredictable results when used.
 
-### ❌ Define a variable for age
+### ✅ Define a variable for age
 
 *How would you define a variable to store the age a person in? Make sure to give it an appropriate name. Explain why you choose that exact data type.*
+int age = 0;
+I chose int because the size of int is not important as the numbers should always fit.
 
-### ❌ Multiple Variable Definitions
+### ✅ Multiple Variable Definitions
 
 *Rewrite the following code snippet so each variable is defined separately.*
 
 ```cpp
 int daysInAWeek, weeksInAYear, monthsInAYear;
 ```
-
-### ❌ Assigning a value
-
-*How would you assign the correct value to each of the variables in the following code snippet.*
-
 ```cpp
 int daysInAWeek;
 int weeksInAYear;
 int monthsInAYear;
 ```
 
-### ❌ Printing Variables
+### ✅ Assigning a value
+
+*How would you assign the correct value to each of the variables in the following code snippet.*
+
+```cpp
+int daysInAWeek = 7;
+int weeksInAYear = 52;
+int monthsInAYear = 12;
+```
+
+### ✅ Printing Variables
 
 *Expand the following code snippet by outputting each variable's value to the terminal. Also print a label before each value.*
 
@@ -516,9 +527,13 @@ int monthsInAYear;
 int secondsInAMinute = 60;
 int secondsInAnHours = 3600;
 int daysInAYear = 365;
+
+cout << "Seconds in a minute: " << secondsInAMinute << endl;
+cout << "Seconds in an hour: " << secondsInAnHours << endl;
+cout << "days in a year: " << daysInAYear << endl;
 ```
 
-### ❌ Literals
+### ✅ Literals
 
 *What are the literals in the code snippet below?*
 
@@ -532,24 +547,28 @@ cout << "b = " << b << endl;
 cout << "c = " << c << endl;
 ```
 
-### ❌ Refactoring Defines
+1, 32 and 128 are literal values
+
+### ✅ Refactoring Defines
 
 *Refactor the code snippet below that makes use of a `define` statement where a constant could have been used. Don't mind the arithmetics for now.*
 
 ```cpp
-#define PI 3.1415
+const int PI 3.1415
 
 double radius = 12.5;
 
 double circleArea = PI * radius * radius;
 ```
 
-### ❌ Magic Numbers have no Meaning
+### ✅ Magic Numbers have no Meaning
 
 *The following code snippet calculates the total invoice amount that has to be paid. The calculation of the total amount contains a magic number. Can you fix it?*
 
 ```cpp
+const double DISCOUNT = 0.21;
+
 double invoiceAmount = 2342.12;   // Just a random value
 
-double totalInvoice = 0.21 * invoiceAmount;   // 0.21 ?
+double totalInvoice = DISCOUNT * invoiceAmount;   // 0.21 ?
 ```

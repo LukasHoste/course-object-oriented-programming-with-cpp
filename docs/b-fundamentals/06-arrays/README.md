@@ -320,46 +320,51 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Day of the Week
+### ✅ Day of the Week
 
 *Refactor the following code snippet using an array of `std::string` elements and lookup the result.*
 
 ```cpp
 #include <iostream>
+#include <string>
 
 using namespace std;
 
 int main() {
 
   unsigned int dayOfTheWeek = 0;
+  std::string days[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
   do {
     cout << "Please enter the day of the week (1 - 7): ";
     cin >> dayOfTheWeek;
   } while (dayOfTheWeek < 1 || dayOfTheWeek > 7);
+
+  cout << days[dayOfTheWeek-1] << endl;
   
-  switch(dayOfTheWeek) {
-    case 1:
-      std::cout << "Than it's Monday today" << std::endl;
-      break;
-    case 2:
-      std::cout << "Than it's Tuesday today" << std::endl;
-      break;
-    case 3:
-      std::cout << "Than it's Wednesday today" << std::endl;
-      break;
-    case 4:
-      std::cout << "Than it's Thursday today" << std::endl;
-      break;
-    case 5:
-      std::cout << "Than it's Friday today" << std::endl;
-      break;
-    case 6:
-      std::cout << "Than it's Saturday today" << std::endl;
-      break;
-    case 7:
-      std::cout << "Than it's Sunday today" << std::endl;
-      break;
-  }
+//   switch(dayOfTheWeek) {
+//     case 1:
+//       std::cout << "Than it's Monday today" << std::endl;
+//       break;
+//     case 2:
+//       std::cout << "Than it's Tuesday today" << std::endl;
+//       break;
+//     case 3:
+//       std::cout << "Than it's Wednesday today" << std::endl;
+//       break;
+//     case 4:
+//       std::cout << "Than it's Thursday today" << std::endl;
+//       break;
+//     case 5:
+//       std::cout << "Than it's Friday today" << std::endl;
+//       break;
+//     case 6:
+//       std::cout << "Than it's Saturday today" << std::endl;
+//       break;
+//     case 7:
+//       std::cout << "Than it's Sunday today" << std::endl;
+//       break;
+//   }
 
   return 0;
 }
