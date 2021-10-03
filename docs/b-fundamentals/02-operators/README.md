@@ -417,27 +417,27 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Squaring a number
+### ✅ Squaring a number
 
 *How would you square the value in `x` and store it in `squared`? Use only the basic math operators.*
 
 ```cpp
 int x = 12;
 
-int squared;
+int squared = x * x;
 ```
 
-### ❌ 24 hours
+### ✅ 24 hours
 
 *Consider the following example, a code snippet from a student, programming a clock which can display the time in `24h` format. The student however has a small problem where the hours sometimes become bigger than `23`. Can you think of a single operator statement to limit the hours to a value between `0` and `23`?*
 
 ```cpp
 int hours = 25;
-
+hours = hours % 24
 // How can we limit hours here so it wraps around to 1?
 ```
 
-### ❌ Incrementing an Expression
+### ✅ Incrementing an Expression
 
 *Knowing what you know now, could you answer the following question? Would it be possible to use the increment operator on an expression as demonstrated in the following code snippet?*
 
@@ -447,8 +447,9 @@ int y = 34;
 
 int z = (x + y)++;
 ```
+This will fail because (x + y) is not a variable and a variable is expected
 
-### ❌ Literals
+### ✅ Literals
 
 Consider the code snippet below. What are the literals in this code?
 
@@ -459,4 +460,6 @@ int y = 5;
 int result = (x + y) * (x + y);
 
 cout << "The result is " << result << endl;
+
+The literals are 12 = x, 5 = y and 289 = result
 ```
