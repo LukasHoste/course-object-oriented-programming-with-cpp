@@ -354,7 +354,7 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 
 Mark the exercises using a ✅ once they are finished.
 
-### ❌ Fail and Ignore
+### ✅ Fail and Ignore
 
 *The code snippet belows reads a number from the user between `1` and `10`. However if the user provides an unparsable value, such as a string, the application becomes unusable. Fix this by using the `cin` functions `fail()`, `clear()` and `ignore()`.*
 
@@ -374,8 +374,31 @@ int main() {
   return 0;
 }
 ```
+### solution 
 
-### ❌ Foreach
+```cpp
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+  int number = 0;
+  do {
+    cout << "Please enter a number between 1 and 10: ";
+    cin >> number;
+    if(cin.fail()){
+        cin.clear();
+        cin.ignore(10000,'\n');
+        cout << "Please enter a number\n";
+    }
+  } while (number < 1 || number > 10);
+
+  return 0;
+}
+```
+
+### ✅ Foreach
 
 *What is wrong with the code below?*
 
@@ -402,7 +425,11 @@ int main() {
 }
 ```
 
-### ❌ Sizeof Array
+In the function the size of the array is not known because the array is passed as a pointer. Therefore we need to add an argument size.
+
+
+
+### ✅ Sizeof Array
 
 *What is happening here? Why is the output of this code snippet wrong?*
 
@@ -429,7 +456,9 @@ int main() {
 }
 ```
 
-### ❌ Changing Array Values
+We need to pass the size of the array as an argument. It will now return the size of int*.
+
+### ✅ Changing Array Values
 
 *What is going on here? Why can the `mess_it_up` function change the values of the passed array?*
 
@@ -457,3 +486,5 @@ int main() {
   return 0;
 }
 ```
+
+This is because arrays are passed as a pointer to the first value. Thus a copy is not created and we directly edit the value in the array.

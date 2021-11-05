@@ -219,3 +219,57 @@ Try to solve the exercises yourself. Don't go copy pasting other people's soluti
 Mark the exercises using a ✅ once they are finished.
 
 * ❌ [Die Throwing](./exercises/die_throwing/README.md)
+
+```cpp
+#pragma once
+
+namespace Die {
+    class Die {
+
+        public:
+          Die(int size);
+
+        public:
+          int roll();
+
+        private:
+          //with constructor
+          int size = 0;
+            
+    };
+};
+```
+
+```cpp
+#include "die.h"
+#include <stdlib.h>
+#include <time.h>
+
+namespace Die {
+
+    Die::Die(int size) {
+      this->size = size;
+    }
+
+    int Die::roll() {
+        srand ( time(NULL) );
+        // return rand() % 7;
+        return rand() % (size+1);
+    }
+
+}
+```
+
+```cpp
+#include <iostream>
+#include "die.h"
+
+using namespace std;
+
+int main() {
+
+    Die::Die dice;
+    cout << dice.roll() << endl;
+    return 0;
+}
+```
